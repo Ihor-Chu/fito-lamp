@@ -31,3 +31,6 @@ dude:	hello.hex
 # -patmega8 -cstk500v1 -P/dev/ttyACM0 -b19200 -Uflash:w:/tmp/arduino_build_88560/Blink.ino.with_bootloader.hex:i 
 
 	avrdude  -c stk500v1 -p atmega8 -P/dev/ttyACM0 -b19200 -U flash:w:hello.hex -v -v
+
+fuse:
+	avrdude  -c stk500v1 -p atmega8 -P/dev/ttyACM0 -b19200 -U lfuse:w:0xFF:m  -U hfuse:w:0xD9:m -v
